@@ -1,0 +1,89 @@
+CREATE TABLE Animais (
+    id 			INTEGER,
+    nome 		VARCHAR(50),
+    nasc 		DATE,
+    peso 		DECIMAL(10,2),
+    cor 		VARCHAR(50),
+  	especie		VARCHAR(50),
+  	altura		DECIMAL(10,2),
+  	observacao	VARCHAR(100)
+);
+
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao) 
+	VALUES (01, 'Agata', '2015-04-09', 13.9, 'branco', 'gato', 22.50, 'Pequena e delicada.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao) 
+	VALUES (02, 'Felix', '2016-06-06', 13.9, 'preto', 'gato', 21.00, 'Corpo preto, rosto branco.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (03, 'Tom', '2013-02-08', 13.9, 'azul', 'gato', 23.00, 'Temeperamento complicado. Odeia ratos.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (04, 'Garfield', '2015-07-06', 13.9, 'laranja', 'gato', 24.00, 'Muito preguiçoso.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (05, 'Frajola', '2013-08-01', 13.9, 'preto', 'gato', 25.00, 'Gatinho maluco, adora caçar passarinhod.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (06, 'Manda-chuva', '2012-02-03', 13.9, 'amarelo', 'gato', 22.00, 'Morava em lata de lixo. Esta em processo de ressocialização.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (07, 'Snowball', '2014-04-06', 13.9, 'preto', 'gato', 23.50, 'Tem 6 dedos.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (10, 'Agata', '2015-08-03', 13.9, 'azul', 'gato', 16.50, 'Inteligente e doce.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (11, 'Gato de Botas', '2012-12-10', 13.9, 'amarelo', 'gato', 19.00, 'Temperamento complicado, senso de heroi.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (12, 'Kitty', '2020-04-06', 13.9, 'amarelo', 'gato', 20.00, 'Fofa, usa um laço rosa na cabeça.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (13, 'Milu', '2013-02-04', 13.9, 'branco', 'cachorro', 100.00, 'Cachorro do PI, fiel companheiro.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (14, 'Pluto', '2012-01-03', 13.9, 'amarelo', 'cachorro', 100.00, 'Cachorro do Mickey.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (15, 'Pateta', '2015-07-01', 13.9, 'preto', 'cachorro', 100.00, 'Cachorro falante com risada engraçada.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (16, 'Snoopy', '2013-11-03', 13.9, 'branco', 'cachorro', 100.00, 'Cachorro voador.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  	
+	VALUES (17, 'Rex', '2019-09-08', 13.9, 'beje', 'cachorro', 100.00, 'Agressivo, mas obediente.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (20, 'Bidu', '2012-04-06', 13.9, 'azul', 'cachorro', 100.00, 'Cão azul do Franjinha.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (21, 'Dum Dum', '2015-04-03', 13.9, 'laranja', 'cachorro', 100.00, 'Cachorro manso e cheio de energia.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (22, 'Mittley', '2011-02-02', 13.9, 'laranja', 'cachorro', 100.00, 'Cachorro agressivo.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (23, 'Scooby', '2012-01-05', 13.9, 'marrom', 'cachorro', 100.00, 'Cachorro aventureiro, louco por um misterio.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (24, 'Rufus', '2014-04-19', 13.9, 'branco', 'cachorro', 100.00, 'Cachorro fofo e calmo.');
+INSERT INTO Animais (id, nome, nasc, peso, cor, especie, altura, observacao)  
+	VALUES (25, 'Tobby', '2021-08-06', 13.9, 'branco', 'cachorro', 100.00, 'Cachorro do Renan, o melhor cachorro do mundo.');
+
+UPDATE Animais
+SET nome = 'Goofy'
+WHERE nome = 'Pateta';
+
+UPDATE Animais
+SET peso = 10
+WHERE nome = 'Garfield';
+
+UPDATE Animais
+SET cor = "Laranja"
+WHERE especie = "gato";
+
+DELETE FROM Animais
+WHERE peso > 200;
+
+DELETE FROM Animais
+WHERE nome LIKE 'C%';
+
+ALTER TABLE Animais
+DROP COLUMN cor;
+
+ALTER TABLE Animais
+MODIFY COLUMN nome VARCHAR(80);
+
+DELETE FROM Animais
+WHERE especie IN ('gato', 'cachorro');
+
+ALTER TABLE Animais
+DROP COLUMN nasc;
+
+DELETE FROM Animais;
+
+DROP TABLE especie;
+
+SELECT*FROM Animais;
